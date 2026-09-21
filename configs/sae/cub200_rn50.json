@@ -1,0 +1,45 @@
+{
+  "experiment_name": "cub200_rn50",
+  "output_dir": "outputs/sae",
+  "device": "cuda",
+  "use_amp": false,
+  "data": {
+    "root_dir": "data/cub200",
+    "train_ann_file": "data/cub200/annotations/captions_train2017.json",
+    "val_ann_file": "data/cub200/annotations/captions_val2017.json",
+    "batch_size": 128,
+    "num_workers": 4
+  },
+  "model": {
+    "use_clip_backbone": true,
+    "clip_variant": "RN50",
+    "clip_pretrained": "openai",
+    "text_backbone_weights": "outputs/text_backbone/text_backbone_pretrained.pt",
+    "img_hidden_dim": 16384,
+    "txt_hidden_dim": 8192,
+    "img_k_sparse": 16,
+    "txt_k_sparse": 8
+  },
+  "training": {
+    "epochs": 40,
+    "optimizer": {
+      "lr": 0.0001,
+      "weight_decay": 0.0001
+    },
+    "scheduler": {
+      "type": "cosine"
+    },
+    "loss": {
+      "lambda_rec": 1.0,
+      "lambda_sp": 0.0,
+      "lambda_kl": 0.0,
+      "cross_modal_type": "kl",
+      "lambda_ue": 1.0,
+      "ue_even_weight": 1.0
+    }
+  },
+  "early_stopping": {
+    "enabled": true,
+    "patience": 5
+  }
+}

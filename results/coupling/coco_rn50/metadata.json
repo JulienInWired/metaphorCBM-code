@@ -1,0 +1,34 @@
+{
+  "dataset": "coco",
+  "backbone": "CLIP-RN50",
+  "sample_count": 60030,
+  "basis_dimensions": {
+    "image": 8188,
+    "text": 1445
+  },
+  "coupling_stats": {
+    "nnz": 11831660,
+    "density": 0.3526109457015991,
+    "min": 0,
+    "max": 0.00031372695229947567,
+    "sum": 0.5811063051223755
+  },
+  "hubness": {
+    "warmup_final": 1,
+    "ratio_min_final": 0.9155581593513489,
+    "ratio_max_final": 3.512524127960205,
+    "text": {
+      "ratio_min_final": 0.9155581593513489,
+      "ratio_max_final": 3.512524127960205
+    },
+    "text_family": {
+      "enabled": false,
+      "compression": 0,
+      "family_count": 0
+    },
+    "image": {
+      "ratio_min_final": 0.9423808455467224,
+      "ratio_max_final": 894.5734252929688
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "backbone": "CLIP-RN50",
+  "predictive_performance": {
+    "metric": "top-1 accuracy (%)",
+    "results": {
+      "cifar10": {
+        "accuracy_percent": 88.58,
+        "config": "configs/downstream/cifar10_rn50.json"
+      },
+      "cifar100": {
+        "accuracy_percent": 70.06,
+        "config": "configs/downstream/cifar100_rn50.json"
+      },
+      "cub200": {
+        "accuracy_percent": 66.58612357611322,
+        "config": "configs/downstream/cub200_rn50.json"
+      },
+      "imagenet": {
+        "accuracy_percent": 72.692,
+        "config": "configs/downstream/imagenet_rn50.json"
+      }
+    }
+  },
+  "concept_completeness": {
+    "metric": "few-shot top-1 accuracy (%)",
+    "shots": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      "full"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "datasets": {
+      "cifar10": {
+        "config": "configs/completeness/cifar10_rn50.json",
+        "raw_results": "results/completeness/cifar10_rn50/results_raw.json",
+        "results_summary": "results/completeness/cifar10_rn50/results_summary.json",
+        "method_keys": {
+          "black_box_linear_probe": "LP",
+          "metaphorcbm": "MetaphorCBM-PA"
+        }
+      },
+      "cifar100": {
+        "config": "configs/completeness/cifar100_rn50.json",
+        "raw_results": "results/completeness/cifar100_rn50/results_raw.json",
+        "results_summary": "results/completeness/cifar100_rn50/results_summary.json",
+        "method_keys": {
+          "black_box_linear_probe": "LP",
+          "metaphorcbm": "MetaphorCBM-PA"
+        }
+      },
+      "cub200": {
+        "config": "configs/completeness/cub200_rn50.json",
+        "raw_results": "results/completeness/cub200_rn50/results_raw.json",
+        "results_summary": "results/completeness/cub200_rn50/results_summary.json",
+        "method_keys": {
+          "black_box_linear_probe": "LP",
+          "metaphorcbm": "SAE-CBM"
+        }
+      },
+      "coco": {
+        "config": "configs/completeness/coco_rn50.json",
+        "raw_results": "results/completeness/coco_rn50/results_raw.json",
+        "results_summary": "results/completeness/coco_rn50/results_summary.json",
+        "method_keys": {
+          "black_box_linear_probe": "LP",
+          "metaphorcbm": "MetaphorCBM-PA"
+        }
+      },
+      "tiny_imagenet": {
+        "config": "configs/completeness/tiny_imagenet_rn50.json",
+        "raw_results": "results/completeness/tiny_imagenet_rn50/results_raw.json",
+        "results_summary": "results/completeness/tiny_imagenet_rn50/results_summary.json",
+        "method_keys": {
+          "black_box_linear_probe": "LP",
+          "metaphorcbm": "SAE-CBM"
+        }
+      }
+    }
+  },
+  "dictionary_coupling": {
+    "dataset": "coco",
+    "config": "configs/coupling/coco_rn50.json",
+    "metadata": "results/coupling/coco_rn50/metadata.json"
+  }
+}

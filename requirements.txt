@@ -1,0 +1,14 @@
+torch==2.7.0
+torchvision==0.22.0
+numpy==2.2.5
+scipy==1.15.3
+pandas==2.2.3
+Pillow==11.2.1
+matplotlib==3.10.1
+networkx==3.4.2
+tqdm==4.67.1
+transformers==4.53.2
+ftfy==6.3.1
+regex==2024.11.6
+gdown==5.2.0
+clip @ https://github.com/openai/CLIP/archive/dcba3cb2e2827b402d2701e7e1c7d9fed8a20ef1.zip

@@ -1,0 +1,45 @@
+{
+  "experiment_name": "coco_rn50",
+  "output_dir": "outputs/sae",
+  "device": "cuda",
+  "use_amp": false,
+  "data": {
+    "root_dir": "data/coco",
+    "train_ann_file": "data/coco/annotations/captions_train2017.json",
+    "val_ann_file": "data/coco/annotations/captions_val2017.json",
+    "batch_size": 128,
+    "num_workers": 4
+  },
+  "model": {
+    "use_clip_backbone": true,
+    "clip_variant": "RN50",
+    "clip_pretrained": "openai",
+    "text_backbone_weights": "outputs/text_backbone/text_backbone_pretrained_COCO.pt",
+    "img_hidden_dim": 8192,
+    "txt_hidden_dim": 4096,
+    "img_k_sparse": 16,
+    "txt_k_sparse": 8
+  },
+  "training": {
+    "epochs": 40,
+    "optimizer": {
+      "lr": 0.0001,
+      "weight_decay": 0.0001
+    },
+    "scheduler": {
+      "type": "cosine"
+    },
+    "loss": {
+      "lambda_rec": 1.0,
+      "lambda_sp": 0.0,
+      "lambda_kl": 0.0,
+      "cross_modal_type": "kl",
+      "lambda_ue": 0.1,
+      "ue_even_weight": 1.0
+    }
+  },
+  "early_stopping": {
+    "enabled": true,
+    "patience": 5
+  }
+}

@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+type: software
+message: "If you use MetaphorCBM in your research, please cite the manuscript below."
+title: MetaphorCBM
+authors:
+  - family-names: Zhu
+    given-names: Boxuan
+    orcid: "https://orcid.org/0009-0004-7112-5369"
+repository-code: "https://github.com/JulienInWired/metaphorCBM-code"
+url: "https://github.com/JulienInWired/metaphorCBM-code"
+license: MIT
+preferred-citation:
+  type: unpublished
+  title: "MetaphorCBM: Autonomous Concept Bottleneck Construction via Multimodal Sparse Dictionary Fusion"
+  authors:
+    - family-names: Zhu
+      given-names: Boxuan
+      orcid: "https://orcid.org/0009-0004-7112-5369"
+    - family-names: Yuan
+      given-names: Qiao
+      orcid: "https://orcid.org/0000-0002-3336-878X"
+    - family-names: Huang
+      given-names: Weizhi
+    - family-names: Gairing
+      given-names: Martin
+    - family-names: Pan
+      given-names: Yushan
+    - family-names: Guan
+      given-names: Sheng-Uei
+    - family-names: Wang
+      given-names: Wei
+  year: 2026
+  url: "https://github.com/JulienInWired/metaphorCBM-code"
